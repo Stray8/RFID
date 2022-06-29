@@ -1,0 +1,4 @@
+doc/
+sample/platform/linux/
+sample/platform/rtos_freertos/stm32f4_eval/project/mdk_release/*
+!sample/platform/rtos_freertos/stm32f4_eval/project/mdk_release/psdk_demo.uvprojx

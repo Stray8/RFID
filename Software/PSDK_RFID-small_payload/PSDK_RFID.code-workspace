@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+    ],
+    "settings": {
+        "files.associations": {
+            "user_var.h": "c",
+            "freertos.h": "c",
+            "test_upgrade_platform_opt.h": "c",
+            "hal_uart.h": "c",
+            "psdk_logger.h": "c",
+            "task.h": "c",
+            "util_misc.h": "c"
+        }
+    }
+}

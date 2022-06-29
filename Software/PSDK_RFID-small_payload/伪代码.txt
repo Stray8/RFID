@@ -1,0 +1,58 @@
+
+
+
+
+int main(void)
+{
+	// 初始化
+    HAL_Init();
+
+	// 创建初始化任务
+    xTaskCreate(...);
+	
+	// 开始调度任务
+    vTaskStartScheduler();
+
+    for (;;);
+}
+
+
+
+
+void PsdkUser_StartTask(void const *argument)
+{
+	...
+	// 初始化SDK 和 MCU 外设
+    UART_Init(...);
+	...
+
+	
+	// 创建RFID任务
+	 xTaskCreate(...);
+				
+}
+
+
+void uhf_task_demo(void* parameter) {
+
+    /* 0. 初始化变量等 */
+    int32_t ret;
+    uint8_t bootloaderV[4] = {0};
+    
+
+    /* 1. 初始化RFID 模块 */
+    uhf_init(...);
+
+
+    while(1){
+		// 扫描标签
+		uhf_start_scanning(...);   // scanning 2000 Ms
+
+		// 获取标签信息
+		uhf_get_found_labels_info(...);
+
+		// 发送标签信息给移动端
+		PsdkDataTransmission_SendDataToMobile(...);
+    }
+}
+
